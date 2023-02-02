@@ -30,7 +30,7 @@ class Courses extends StatelessWidget {
           },
           child: SizedBox(
             // color: Colors.red,
-            height: 170,
+            height: 200,
             child: ListView.separated(
               shrinkWrap: true,
               primary: false,
@@ -45,8 +45,8 @@ class Courses extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: 240,
-                      height: 95,
+                      width: 180,
+                      height: 130,
                       decoration: const BoxDecoration(
                         color: Colors.grey,
                         borderRadius: BorderRadius.all(
@@ -60,10 +60,14 @@ class Courses extends StatelessWidget {
                           )
                       ),
                     ),
+                    const SizedBox(
+                      height: 5,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        customTextMedium('Silva Life System', Colors.black, 16),
+                        customTextMedium('Silva Life System', Colors.black, 14),
+
                         customTextMedium('\$99', Colors.black, 16),
                       ],
                     ),

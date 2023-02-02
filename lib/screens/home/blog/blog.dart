@@ -19,8 +19,7 @@ class Blogs extends StatelessWidget {
           height: 10,
         ),
         SizedBox(
-          // color: Colors.red,
-          height: 190,
+          height: 180,
           child: ListView.separated(
             shrinkWrap: true,
             primary: false,
@@ -35,22 +34,24 @@ class Blogs extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 240,
-                    height: 95,
+                    width: 150,
+                    height: 100,
                     decoration: const BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
                     ),
+                  ),const SizedBox(
+                    height: 5,
                   ),
                   SizedBox(
-                    width: 240,
-                    height: 95,
+                    width: 150,
+                    // height: 95,
                     child: customTextMedium(
                         'HOW TO PRACTICE MEDITATION CONSISTANTLY?',
                         Colors.black,
-                        16),
+                        14),
                   ),
                 ],
               );

@@ -20,7 +20,7 @@ class Events extends StatelessWidget {
         ),
         SizedBox(
           // color: Colors.red,
-          height: 130,
+          height: 200,
           child: ListView.separated(
             shrinkWrap: true,
             primary: false,
@@ -35,8 +35,8 @@ class Events extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 240,
-                    height: 95,
+                    width: 180,
+                    height: 130,
                     decoration: const BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.all(

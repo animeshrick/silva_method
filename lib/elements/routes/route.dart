@@ -23,7 +23,7 @@ class Routes {
         case MyRoutes.intro3Route:
          return MaterialPageRoute(builder: (_) => const IntroView3());
         case MyRoutes.homeRoute:
-         return MaterialPageRoute(builder: (_) => const Home());
+         return MaterialPageRoute(builder: (_) =>  Home());
         case MyRoutes.courseDetailsRoute:
          return MaterialPageRoute(builder: (_) => const CourseDetails());
       default:
