@@ -5,6 +5,7 @@ import 'package:silva/elements/text_elements.dart';
 import 'package:silva/screens/auth/sign_up.dart';
 import 'package:silva/screens/home/home.dart';
 
+import '../../elements/buttons.dart';
 import '../../elements/custom_textfield.dart';
 
 class SignInView extends StatefulWidget {
@@ -52,50 +53,22 @@ class _SignInViewState extends State<SignInView> {
                   alignment: Alignment.bottomRight,
                   child: InkWell(
                     child:
-                    customTextMedium("Forgot Password", Colors.black, 16),
+                        customTextMedium("Forgot Password", Colors.black, 16),
                   ),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xffe12178), Color(0xffbd2d92)],
+                CustomButtons().gradiantButtons(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => Home(),
                         ),
-                        borderRadius: BorderRadius.circular(5),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Color.fromRGBO(0, 0, 0, 0.57),
-                              //shadow for button
-                              blurRadius: 5) //blur radius of shadow
-                        ]),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        onSurface: Colors.transparent,
-                        shadowColor: Colors.transparent,
-                      ),
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) =>const Home(),
-                          ),
-                        );
-                      },
-                      child: Padding(
-                        padding:const EdgeInsets.only(
-                          top: 18,
-                          bottom: 18,
-                        ),
-                        child: customTextMedium("Login", Colors.white, 16),
-                      ),
-                    ),
-                  ),
-                ),
+                      );
+                    },
+                    text: 'Login'),
                 const SizedBox(
                   height: 15,
                 ),

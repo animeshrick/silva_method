@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silva/elements/animated_route.dart';
+import 'package:silva/elements/routes/animated_route.dart';
 import 'package:silva/elements/paper_texture_bg.dart';
 import 'package:silva/elements/text_elements.dart';
 

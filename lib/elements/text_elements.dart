@@ -32,8 +32,7 @@ Widget customTextMedium(String text, Color color, double size, {fontWeight}) {
       fontSize: size,
       color: color,
       fontWeight: fontWeight,
-      overflow: TextOverflow.ellipsis,
-
+      // overflow: TextOverflow.ellipsis,
       fontFamily: 'Montserrat-Medium',
     ),
   );

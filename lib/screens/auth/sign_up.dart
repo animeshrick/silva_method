@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:silva/elements/app_color.dart';
 import 'package:silva/elements/auth_bg.dart';
+import 'package:silva/elements/buttons.dart';
 import 'package:silva/elements/custom_textfield.dart';
 import 'package:silva/elements/gradiant_text.dart';
 import 'package:silva/elements/paper_texture_bg.dart';
@@ -60,51 +61,24 @@ class _SignupViewState extends State<SignupView> {
                 const SizedBox(
                   height: 15,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  child: DecoratedBox(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [AppColor().appBtnColor1, AppColor().appBtnColor2],
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                          boxShadow: const[
-                            BoxShadow(
-                                color: Color.fromRGBO(0, 0, 0, 0.57),
-                                //shadow for button
-                                blurRadius: 5) //blur radius of shadow
-                          ]),
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.transparent,
-                            onSurface: Colors.transparent,
-                            shadowColor: Colors.transparent,
-                            //make color or elevated button transparent
-                          ),
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => Home(),
-                              ),
-                            );
-                          },
-                          child: Padding(
-                            padding:const EdgeInsets.only(
-                              top: 18,
-                              bottom: 18,
-                            ),
-                            child: customTextMedium('Sign up', Colors.white, 18),
-                          ))),
-                ),
+                CustomButtons().gradiantButtons(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => Home(),
+                        ),
+                      );
+                    },
+                    text: 'Sign up'),
                 const SizedBox(
                   height: 15,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    customTextMedium('Already have an account?', Colors.black, 16),
-
+                    customTextMedium(
+                        'Already have an account?', Colors.black, 16),
                     const SizedBox(
                       width: 5,
                     ),

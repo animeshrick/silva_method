@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silva/elements/delayed_display.dart';
 import 'package:silva/elements/text_elements.dart';
 import 'package:silva/screens/home/blog/blog.dart';
 import 'package:silva/screens/home/courses/courses.dart';
@@ -21,13 +22,16 @@ class Home extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    height: 170,
-                    decoration: const BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20),
+                  DelayedDisplay(
+                    delay:const Duration(milliseconds: 500),
+                    child: Container(
+                      width: double.infinity,
+                      height: 170,
+                      decoration: const BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
                       ),
                     ),
                   ),
@@ -36,43 +40,19 @@ class Home extends StatelessWidget {
                   ),
 
                   /// -------------- Courses ----------------
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      customTextExtraBold('Courses', Colors.black, 16),
-                      customTextMedium('View All', Colors.black, 16),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Courses(),
+                  const DelayedDisplay(
+                      delay: Duration(milliseconds: 1000),
+                      child:  Courses()),
 
                   /// -------------- Blogs ----------------
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      customTextExtraBold('Blogs', Colors.black, 16),
-                      customTextMedium('View All', Colors.black, 16),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Blogs(),
+                  const DelayedDisplay(
+                      delay: Duration(milliseconds: 1500),
+                      child:  Blogs()),
 
                   /// -------------- Events ----------------
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      customTextExtraBold('Events', Colors.black, 16),
-                      customTextMedium('View All', Colors.black, 16),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Events(),
+                  const DelayedDisplay(
+                      delay: Duration(milliseconds: 2000),
+                      child:  Events()),
                 ],
               ),
             ),

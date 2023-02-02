@@ -11,5 +11,6 @@ class AppColor{
   Color appBaseColor2 =  Color(0xffa051f4);
   Color appBtnColor1 =  Color(0xffe12178);
   Color appBtnColor2 = Color(0xffbd2d92);
+  Color buyButtonColor = Color(0xff966a00);
 }
 
