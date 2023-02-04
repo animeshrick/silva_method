@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:silva/screens/home/courses/details/course_details.dart';
+import 'package:silva/elements/buttons.dart';
 import '../../../elements/text_elements.dart';
 
 class Courses extends StatelessWidget {
-  const Courses({super.key});
+  const Courses({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
+
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -19,88 +20,68 @@ class Courses extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => CourseDetails(),
-              ),
-            );
-          },
-          child: SizedBox(
-            // color: Colors.red,
-            height: 200,
-            child: ListView.separated(
+        SizedBox(
+          height: 230,
+          child: ListView.separated(
               shrinkWrap: true,
               primary: false,
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               separatorBuilder: (_, __) => const SizedBox(
-                width: 10,
-              ),
-              itemCount: 5,
-              itemBuilder: (_, int i) {
+                    width: 10,
+                  ),
+              itemCount: 3,
+              itemBuilder: (context, int i) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      width: 180,
+                      width: 230,
                       height: 130,
                       decoration: const BoxDecoration(
                         color: Colors.grey,
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  "https://silvamethod.com/store/wp-content/uploads/2022/01/manifesting-course.jpg"
-                              ),
-                              fit: BoxFit.cover
-                          )
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        customTextMedium('Silva Life System', Colors.black, 14),
-
-                        customTextMedium('\$99', Colors.black, 16),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 100,
-                          height: 30,
-                          decoration: const BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(5),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Enroll Now",
-                              style: TextStyle(color: Colors.yellow),
-                            ),
-                          ),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                              "https://silvamethod.com/store/wp-content/uploads/2022/01/manifesting-course.jpg"),
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    customTextBold(
+                        'Silva Life System', Colors.black, 18),
+                    const SizedBox(
+                      height: 5,
+                    ),
+
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        customTextMedium('\$99', Colors.black, 14),
+                        const SizedBox(
+                          width: 85,
+                        ),
+                        customButton(
+                          height: 40,
+                          textColor: Colors.yellow,
+                          buttonText: 'Enroll Now',
+                          onPressed: () {},
+                          buttonTextSize: 18,
+                          btnColor: Colors.black,
+                        ),
+                      ],
+                    ),
                   ],
                 );
-              },
-            ),
-          ),
+              }),
         ),
       ],
     );
-    ;
   }
 }
