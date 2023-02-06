@@ -44,8 +44,8 @@ class Courses extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: 250,
-                        height: 130,
+                        width: 230,
+                        height: 150,
                         decoration: const BoxDecoration(
                           color: Colors.grey,
                           borderRadius: BorderRadius.all(
@@ -66,7 +66,7 @@ class Courses extends StatelessWidget {
                         children: [
                           customTextBold('Silva Life System', Colors.black, 14),
                           const SizedBox(
-                            width: 25,
+                            width: 10,
                           ),
                           GestureDetector(
                               onTap: () {},
