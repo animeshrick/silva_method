@@ -72,18 +72,15 @@ class Courses extends StatelessWidget {
                               onTap: () {},
                               child: Container(
                                 width: 100,
-                                height: 30,
+                                height: 20,
                                 decoration: const BoxDecoration(
                                   color: Colors.black,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(5),
                                   ),
                                 ),
-                                child: const Center(
-                                  child: Text(
-                                    "Enroll Now",
-                                    style: TextStyle(color: Colors.yellow),
-                                  ),
+                                child:  Center(
+                                  child: customTextMedium('Enroll Now', Colors.yellow, 12)
                                 ),
                               )),
                         ],

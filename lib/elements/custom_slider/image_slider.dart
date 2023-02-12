@@ -26,24 +26,27 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: 260,
-          child: PageView.builder(
-            itemCount: widget.images.length,
-            physics: const BouncingScrollPhysics(),
-            pageSnapping: true,
-            controller: _pageController,
-            onPageChanged: (page) {
-              setState(() {
-                activePage = page;
-              });
-            },
-            itemBuilder: (context, pagePosition) {
-              bool active = pagePosition == activePage;
-              return imageAnimation(
-                  _pageController, widget.images[pagePosition], active);
-            },
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20), // Image border
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 260,
+            child: PageView.builder(
+              itemCount: widget.images.length,
+              physics: const BouncingScrollPhysics(),
+              pageSnapping: true,
+              controller: _pageController,
+              onPageChanged: (page) {
+                setState(() {
+                  activePage = page;
+                });
+              },
+              itemBuilder: (context, pagePosition) {
+                bool active = pagePosition == activePage;
+                return imageAnimation(
+                    _pageController, widget.images[pagePosition], active);
+              },
+            ),
           ),
         ),
         if (widget.images.length > 1)
