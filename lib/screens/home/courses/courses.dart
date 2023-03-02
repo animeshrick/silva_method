@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:silva/elements/buttons.dart';
+import 'package:silva/elements/routes/routes_name.dart';
+import 'package:silva/screens/home/courses/view_all_courses.dart';
 import '../../../elements/text_elements.dart';
 import 'details/course_details.dart';
 
@@ -9,7 +10,7 @@ class Courses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: ()=> Navigator.push(
+      onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
           builder: (_) => CourseDetails(),
@@ -21,7 +22,16 @@ class Courses extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               customTextExtraBold('Courses', Colors.black, 16),
-              customTextMedium('View All', Colors.black45, 16),
+              InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ViewAllCourses(),
+                      ),
+                    );
+                  },
+                  child: customTextMedium('View All', Colors.black45, 16)),
             ],
           ),
           const SizedBox(
@@ -79,9 +89,9 @@ class Courses extends StatelessWidget {
                                     Radius.circular(5),
                                   ),
                                 ),
-                                child:  Center(
-                                  child: customTextMedium('Enroll Now', Colors.yellow, 12)
-                                ),
+                                child: Center(
+                                    child: customTextMedium(
+                                        'Enroll Now', Colors.yellow, 12)),
                               )),
                         ],
                       ),

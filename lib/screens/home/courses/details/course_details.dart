@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:silva/elements/buttons.dart';
 import 'package:silva/elements/delayed_display.dart';
 import 'package:silva/elements/text_elements.dart';
+import 'package:silva/screens/home/courses/buy_courses.dart';
 import 'package:silva/screens/home/courses/details/parts/curriculum.dart';
 import 'package:silva/screens/home/courses/details/parts/instructor.dart';
 import 'package:silva/screens/home/courses/details/parts/overview.dart';
@@ -22,8 +23,12 @@ class _CourseDetailsState extends State<CourseDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      bottomNavigationBar:
-          CustomButtons().buyButton(onPressed: () {}, text: "Buy Now"),
+      bottomNavigationBar: CustomButtons().buyButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => BuyCourses()));
+          },
+          text: "Buy Now"),
       body: SingleChildScrollView(
         child: Column(
           children: [

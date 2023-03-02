@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silva/screens/home/events/view_all_events.dart';
 import '../../../elements/text_elements.dart';
 
 class Events extends StatelessWidget {
@@ -12,7 +13,14 @@ class Events extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             customTextExtraBold('Events', Colors.black, 16),
-            customTextMedium('View All', Colors.black45, 16),
+            InkWell(
+                onTap: ()=> Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const ViewAllEvents(),
+                  ),
+                ),
+                child: customTextMedium('View All', Colors.black45, 16)),
           ],
         ),
         const SizedBox(
